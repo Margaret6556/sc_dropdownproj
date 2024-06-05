@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.45/moment-timezone.min.js"
+      integrity="sha512-EUm65YBi2BbIovgy8ZNxiNEa0xnA3LSxYYcMuYdCpxwNILaHa+IXNJcnJQo9AugzC3uQ9tsf0n2aoSRaHIfQjg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <title>Timezones are fun!</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: coral;
+        text-align: center;
+        margin: 120px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title 1">Hi! <span id="guest">👋🏻 ${guest}</span></h1>
+    <h1>Where are you from?</h1>
+    <select name="" id="select">
+      <option value="Europe">Europe 🏰</option>
+      <option value="USA">Miami 🏖️</option>
+      <option value="Asia">Philippines 🩴</option>
+    </select>
+
+    <br />
+
+    
+
+    <script>
+      let guest = "Guest"; // Set a default value for guest
+
+      document.getElementById("guest").innerText = guest;
+
+      function selectElementfunction(event) {
+        let timezone = "";
+
+        if (event.target.value === "Europe") {
+          timezone = "Europe/Berlin";
+        } else if (event.target.value === "USA") {
+          timezone = "America/New_York";
+        } else if (event.target.value === "Asia") {
+          timezone = "Asia/Manila";
+        }
+
+        let currentTime = moment().tz(timezone).format("dddd, MMMM D, h:mm A");
+
+        alert(`It is ${currentTime} in ${event.target.value}`);
+      }
+
+      let selectElement = document.querySelector("#select");
+
+      selectElement.addEventListener("change", selectElementfunction);
+    </script>
+  </body>
+</html>

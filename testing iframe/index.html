@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iframe Application demo</title>
+
+    <style>
+      body {
+        text-align: center;
+        margin: 20px auto;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Embedded Spin-the-Sheel website</h1>
+    <iframe
+      src="https://spinthewheel.io/"
+      style="border: 0px #ffffff none"
+      name="Spin the Wheel"
+      scrolling="no"
+      frameborder="1"
+      marginheight="0px"
+      marginwidth="0px"
+      height="400px"
+      width="750px"
+      allowfullscreen
+    ></iframe>
+
+    <script>
+      function reloadIframe() {
+        var iFrame = document.getElementById("myIframe");
+        iFrame.src = iFrame.src;
+      }
+    </script>
+  </body>
+</html>
